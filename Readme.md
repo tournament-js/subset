@@ -43,8 +43,7 @@ Attach it to the short variable of choice:
 var $ = require('subset');
 ````
 
-It is recommended to get it with the larger utility library:
-[interlude](https://github.com/clux/interlude) for which it was made.
+and fire up the set engine:
 
 ```javascript
 $.union([1,3,5], [4,5,6]); // [ 1, 3, 5, 4, 6 ]
@@ -71,6 +70,9 @@ nested.sort($.comparing('length')); // [ [ 2 ], [ 2, 3 ], [ 1, 3, 2 ] ]
 ````
 
 Read the [API](https://github.com/clux/subset/blob/master/api.md).
+
+Note that it is recommended to get it with the larger utility library:
+[interlude](https://github.com/clux/interlude) for which it was made.
 
 ## Installation
 
