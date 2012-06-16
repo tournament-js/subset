@@ -1,0 +1,22 @@
+{
+  "author": "Eirik Albrigtsen <analsandblaster@gmail.com>",
+  "name": "subset",
+  "description": "Generalized set operations and comparisons in the style of Haskell",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/clux/complement.git"
+  },
+  "main": "subset.js",
+  "scripts": {
+    "test": "tap ./test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tap": "~0.2.5"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
