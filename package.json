@@ -7,6 +7,20 @@
     "type": "git",
     "url": "git://github.com/clux/complement.git"
   },
+  "keywords": [
+    "compare",
+    "comparing",
+    "equality",
+    "union",
+    "intersect",
+    "nub",
+    "group",
+    "generalized",
+    "haskell",
+    "Data.List",
+    "Ord",
+    "ES5"
+  ],
   "main": "subset.js",
   "scripts": {
     "test": "tap ./test"

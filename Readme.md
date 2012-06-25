@@ -1,4 +1,4 @@
-# Subset ![travis build status](https://secure.travis-ci.org/clux/subset.png)
+# Subset [![Build Status](https://secure.travis-ci.org/clux/subset.png)](http://travis-ci.org/clux/subset)
 Subset provides basic and generalized set operations for JavaScript.
 They are inspired by a subset of the interface to Haskell's [Data.List](http://www.haskell.org/ghc/docs/latest/html/libraries/base/Data-List.html), but optimized for JavaScript semantics and performance.
 
