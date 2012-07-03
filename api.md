@@ -1,10 +1,10 @@
 # Subset API
 Subset export several basic and generalized set operations for JavaScript Arrays.
-The generalized versions work best with the additionally supplied generalized 
+The generalized versions work best with the additionally supplied generalized
 
 
 ## Generalized Equality
-This function is created primarily for the 
+This function is created primarily for the
 ### $.equality(props..) :: (x, y -> x 'equality on props' y)
 This is a special function that creates an equality testing function based on
 properties to test on. It will return true if and only if all the properties listed
@@ -68,7 +68,7 @@ money.sort($.comparing('money', +1, 'id', -1));
 
 ## Operations
 In the following section, an argument named *cmp* denotes a comparison function
-created by `comparing`, `compare`, or manually. 
+created by `comparing`, `compare`, or manually.
 An argument named *eq* denotes an equality function created by `equality`, manually, or another module like `eq2` from [interlude](https://github.com/clux/interlude).
 
 ### $.maximum(xs) :: Number
