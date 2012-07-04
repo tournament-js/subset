@@ -4,7 +4,7 @@ The generalized versions work best with the additionally supplied generalized
 
 
 ## Generalized Equality
-This function is created primarily for the
+This function is created primarily for the generalized set operations further down.
 ### $.equality(props..) :: (x, y -> x 'equality on props' y)
 This is a special function that creates an equality testing function based on
 properties to test on. It will return true if and only if all the properties listed
