@@ -70,9 +70,9 @@ nested.sort($.comparing('length')); // [ [ 2 ], [ 2, 3 ], [ 1, 3, 2 ] ]
 [2, 100, 10, 4].sort($.compare()); // [2, 4, 10, 100] <- sensible numerical order
 ````
 
-Read the [API](https://github.com/clux/subset/blob/master/api.md).
+Read the [full API](https://github.com/clux/subset/blob/master/api.md).
 
-Note that it is recommended to get it with the larger utility library:
+Note that it is perhaps useful to get it with the larger utility library:
 [interlude](https://github.com/clux/interlude) for which it was made.
 
 ## Installation
