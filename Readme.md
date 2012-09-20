@@ -13,6 +13,7 @@ Included are the basic operations:
 - nub
 - group
 - difference
+- isSubsetOf
 
 generalized operators using customized ordering:
 
