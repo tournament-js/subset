@@ -1,6 +1,6 @@
 # Subset API
 Subset export several basic and generalized set operations for JavaScript Arrays.
-The generalized versions work best with the additionally supplied generalized
+The generalized versions work best with the additionally supplied generalized equality and comparison functions.
 
 
 ## Generalized Equality
