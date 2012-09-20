@@ -204,5 +204,18 @@ $.difference = function (xs, ys) {
   return ys.reduce($.delete, xs.slice());
 };
 
+$.isSubsetOf = function (xs, ys, proper) {
+  var parent = ys.slice();
+  for (var i = 0; i < xs.length; i += 1) {
+    var x = xs[i]
+      , idx = parent.indexOf(x);
+    if (idx < 0) {
+      return false
+    }
+    parent.splice(idx, 1);
+  }
+  return (proper) ? (parent.length > 0) : true;
+};
+
 // end - export
 module.exports = $;

@@ -161,3 +161,20 @@ test("list operations", function (t) {
   t.deepEqual(res, [{a:1}, {a:3}], "differenceBy");
   t.end();
 });
+
+
+test("isSubsetOf", function (t) {
+  t.ok($.isSubsetOf([1,2], [1,2,3]), "[1,2] subset of [1,2,3]");
+  t.ok(!$.isSubsetOf([1,2,3], [1,2]), "[1,2,3] not subset of [1,2]");
+  t.ok($.isSubsetOf([1,2,3], [1,2,3]), "[1,2,3] subset of [1,2,3]");
+  t.ok(!$.isSubsetOf([1,2,3], [1,2,3], true), "[1,2,3] not proper subset of itself");
+  t.ok($.isSubsetOf([1,2], [1,2,3], true), "[1,2] is a proper subset of [1,2,3]");
+  t.ok(!$.isSubsetOf([1,2,3], [1,2], true), "[1,2,3] is not a proper subset of [1,2]");
+  t.ok(!$.isSubsetOf([1,2,2], [1,2], true), "[1,2,2] is not a proper subset of [1,2]");
+  t.ok($.isSubsetOf([1,2], [1,2,2], true), "[1,2] is a proper subset of [1,2,2]");
+  t.ok(!$.isSubsetOf([1,2,2], [1,2,3]), "[1,2,2] not subset of [1,2,3]");
+  t.ok($.isSubsetOf([1,2,2], [1,2,2,3]), "[1,2,2] subset of [1,2,2,3]");
+  t.ok($.isSubsetOf($.nub([1,2,2]), [1,2,3]), "nub([1,2,2]) subset of [1,2,3]");
+
+  t.end();
+});

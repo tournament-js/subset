@@ -281,3 +281,22 @@ $.delete(xs, 2); // [ 1, 2, 3, 4 ]
 ````
 
 Here `notElem`, and `neq` are simple functions from [interlude](https://github.com/clux/interlude).
+
+
+### $.isSubsetOf(xs, ys [, proper]) :: Boolean
+Checks if `xs` is a subset of `ys`, and optionally, if it is a proper subset.
+
+````javascript
+$.isSubsetOf([1,2], [1,2,3]); // true
+$.isSubsetOf([1,2,3], [1,2]); // false
+$.isSubsetOf([1,2,3], [1,2,3]); // true
+$.isSubsetOf([1,2,3], [1,2,3], true); // false (not proper subset)
+````
+
+Note that duplicates count as a separate element, so if you want true set behaviour, ensure that everything passed satisfies `x === $.nub(x)` by either calling it explicitly or modelling it well.
+
+````javascript
+$.isSubsetOf([1,2,2], [1,2,3]); // false
+$.isSubsetOf([1,2,2], [1,2,2,3]); // true
+$.isSubsetOf($.nub([1,2,2]), [1,2,3]); // true
+````
