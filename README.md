@@ -6,9 +6,9 @@ They are inspired by a subset of the interface to Haskell's [Data.List](http://w
 ## Usage
 Attach it to the short variable of choice:
 
-````javascript
+```javascript
 var $ = require('subset');
-````
+```
 
 and fire up the set engine:
 
@@ -34,7 +34,7 @@ nested.sort($.comparing('length')); // [ [ 2 ], [ 2, 3 ], [ 1, 3, 2 ] ]
 
 [2, 100, 10, 4].sort(); // [10, 100, 2, 4] <- default lexicographical order
 [2, 100, 10, 4].sort($.compare()); // [2, 4, 10, 100] <- sensible numerical order
-````
+```
 
 Read the [full API](https://github.com/clux/subset/blob/master/api.md).
 
@@ -43,22 +43,22 @@ Note that it is often useful to get it with the larger utility library:
 
 ## Installation
 
-````bash
+```bash
 $ npm install subset
-````
+```
 
 ## Running tests
 Install development dependencies
 
-````bash
+```bash
 $ npm install
-````
+```
 
 Run the tests
 
-````bash
+```bash
 $ npm test
-````
+```
 
 ## License
 MIT-Licensed. See LICENSE file for details.
