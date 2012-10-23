@@ -34,6 +34,8 @@ test("comparison and equality", function (t) {
   objs.sort($.compare(cost, -1));
   t.deepEqual(objs[0], {a:1, b:0}, "compare by cost desc (highest first)");
 
+  t.deepEqual($.minimumBy($.compare(cost), objs), {a:0, b:3}, "minimum has smallest cost");
+
   // comparing
   t.deepEqual([[1,3],[1,2],[1,5]].sort($.comparing(1)), [[1,2],[1,3],[1,5]], "comparing");
   t.deepEqual([{a:2},{a:1}].sort($.comparing('a')), [{a:1}, {a:2}], "comparing objs");
