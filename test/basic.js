@@ -19,6 +19,21 @@ test("comparison and equality", function (t) {
   t.deepEqual([2,4,1,3].sort($.compare(+1)), [1,2,3,4], "$.compare is default behavior (asc specified)");
   t.deepEqual([2,4,1,3].sort($.compare(-1)), [4,3,2,1], "$.compare can change direction");
 
+  // compare overloaded
+  var cost = function (x) {
+    return 4*x.a + x.b;
+  };
+  var objs = [{a:1, b:0}, {a:0, b:3}]; // first has higher cost
+  objs.sort($.compare(cost));
+
+  t.deepEqual(objs[0], {a:0, b:3}, "compare by cost asc (lowest first)");
+
+  objs.sort($.compare(cost, +1))
+  t.deepEqual(objs[0], {a:0, b:3}, "compare by cost asc def (lowest first)");
+
+  objs.sort($.compare(cost, -1));
+  t.deepEqual(objs[0], {a:1, b:0}, "compare by cost desc (highest first)");
+
   // comparing
   t.deepEqual([[1,3],[1,2],[1,5]].sort($.comparing(1)), [[1,2],[1,3],[1,5]], "comparing");
   t.deepEqual([{a:2},{a:1}].sort($.comparing('a')), [{a:1}, {a:2}], "comparing objs");

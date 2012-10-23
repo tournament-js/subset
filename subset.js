@@ -16,10 +16,16 @@ $.equality = function () {
   };
 };
 
-$.compare = function (factor) {
-  factor = factor || 1;
+$.compare = function (c, c2) {
+  if (typeof c === 'function') {
+    var c2 = c2 || 1;
+    return function (x, y) {
+      return c2 * (c(x) - c(y));
+    };
+  }
+  c = c || 1;
   return function (x, y) {
-    return factor * (x - y);
+    return c * (x - y);
   };
 };
 
@@ -210,7 +216,7 @@ $.isSubsetOf = function (xs, ys, proper) {
     var x = xs[i]
       , idx = parent.indexOf(x);
     if (idx < 0) {
-      return false
+      return false;
     }
     parent.splice(idx, 1);
   }

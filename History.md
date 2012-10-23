@@ -1,3 +1,7 @@
+0.1.2 / 2012-10-24?
+==================
+  * Overload `$.compare()` to be able to take a cost function as well
+
 0.1.1 / 2012-09-20
 ==================
   * Add `isSubsetOf` function
