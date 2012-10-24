@@ -189,7 +189,7 @@ $.group = function (xs) {
 };
 
 $.unionBy = function (eq, xs, ys) {
-  return xs.concat(xs.reduce($.deleteBy.bind(this, eq), $.nubBy(eq, ys)));
+  return xs.concat(xs.reduce($.deleteBy.bind(null, eq), $.nubBy(eq, ys)));
 };
 
 $.union = function (xs, ys) {
@@ -197,10 +197,7 @@ $.union = function (xs, ys) {
 };
 
 $.differenceBy = function (eq, xs, ys) {
-  var delBy = function (ys, y) {
-    return $.deleteBy(eq, ys, y);
-  };
-  return ys.reduce(delBy, xs.slice()); // reduce a copy
+  return ys.reduce($.deleteBy.bind(null, eq), xs.slice()); // reduce a copy
 };
 
 $.difference = function (xs, ys) {
