@@ -1,4 +1,4 @@
-0.1.2 / 2012-10-24?
+0.1.2 / 2012-10-24
 ==================
   * Overload `$.compare()` to be able to take a cost function as well
 
