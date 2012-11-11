@@ -18,7 +18,7 @@ $.equality = function () {
 
 $.compare = function (c, c2) {
   if (typeof c === 'function') {
-    var c2 = c2 || 1;
+    c2 = c2 || 1;
     return function (x, y) {
       return c2 * (c(x) - c(y));
     };
