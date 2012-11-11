@@ -156,7 +156,7 @@ $.nubBy = function (eq, xs) {
 
 // nub, build up a list of unique (w.r.t. equality)
 // elements by checking if current is not 'equal' to anything in the buildup
-// http://jsperf.com/nubnubbytest1 => indexOf clearly beats calling $.nubBy($.eq2)
+// http://jsperf.com/nubnubbytest1 => indexOf clearly beats calling $.nubBy(eq2)
 $.nub = function (xs) {
   var result = [];
   for (var i = 0, len = xs.length; i < len; i += 1) {
