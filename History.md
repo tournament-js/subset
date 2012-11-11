@@ -1,3 +1,7 @@
+0.1.3 / 2012-11-11
+==================
+  * Code cleanups and better documentation
+
 0.1.2 / 2012-10-24
 ==================
   * Overload `$.compare()` to be able to take a cost function as well
