@@ -137,14 +137,11 @@ $.intersect = function (xs, ys) {
   return $.intersectBy(eq2, xs, ys);
 };
 
-// nubBy builds up a list of unique (w.r.t. provided equality function) similarly to nub
 $.nubBy = function (eq, xs) {
-  var result = []
-    , resLen = 0
-    , len = xs.length;
-  for (var i = 0; i < len; i += 1) {
+  var result = [];
+  for (var i = 0, len = xs.length; i < len; i += 1) {
     var keep = true;
-    for (var j = 0; j < resLen; j += 1) {
+    for (var j = 0, resLen = result.length; j < resLen; j += 1) {
       if (eq(result[j], xs[i])) {
         keep = false;
         break;
@@ -152,7 +149,6 @@ $.nubBy = function (eq, xs) {
     }
     if (keep) {
       result.push(xs[i]);
-      resLen += 1;
     }
   }
   return result;
