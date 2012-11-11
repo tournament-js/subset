@@ -156,12 +156,12 @@ $.nub([1,3,2,4,1,2]); // [ 1, 3, 2, 4 ]
 The generalized version of `nub`.
 
 ```js
-var notCoprime = $.seq2($.gcd, $.gt(1));
+var notCoprime = $($.gcd, $.gt(1));
 var primes = $.nubBy(notCoprime, $.range(2, 11)); // [ 2, 3, 5, 7, 11 ]
 ```
 
 Here the definition of equality is *a and b have common factors*.
-Note the `range` and `seq2` functions from [interlude](https://github.com/clux/interlude).
+Note the `range` and `$` functions from [interlude](https://github.com/clux/interlude).
 
 ### $.group(xs) :: ys
 The group function takes an array and returns an array of arrays such that
