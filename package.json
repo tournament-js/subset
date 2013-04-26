@@ -5,7 +5,7 @@
   "version": "0.1.3",
   "repository": {
     "type": "git",
-    "url": "git://github.com/clux/complement.git"
+    "url": "git://github.com/clux/subset.git"
   },
   "keywords": [
     "compare",
@@ -23,10 +23,10 @@
   ],
   "main": "subset.js",
   "scripts": {
-    "test": "tap ./test"
+    "test": "tap test/*.js"
   },
   "devDependencies": {
-    "tap": "~0.3.1"
+    "tap": "~0.4.0"
   },
   "license": "MIT"
 }
