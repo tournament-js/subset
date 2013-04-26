@@ -1,3 +1,7 @@
+0.1.4 / 2013-04-26
+==================
+  * Update package.json a little
+
 0.1.3 / 2012-11-11
 ==================
   * Code cleanups and better documentation
