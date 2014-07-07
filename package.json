@@ -23,7 +23,8 @@
   ],
   "main": "subset.js",
   "scripts": {
-    "test": "tap test/*.js"
+    "test": "tap test/*.js",
+    "coverage": "covert test/*.js"
   },
   "devDependencies": {
     "tap": "~0.4.4"

@@ -1,6 +1,6 @@
 # Subset
-[![Build Status](https://secure.travis-ci.org/clux/subset.png)](http://travis-ci.org/clux/subset)
-[![Dependency Status](https://david-dm.org/clux/subset.png)](https://david-dm.org/clux/subset)
+[![Build Status](https://secure.travis-ci.org/clux/subset.svg)](http://travis-ci.org/clux/subset)
+[![Dependency Status](https://david-dm.org/clux/subset.svg)](https://david-dm.org/clux/subset)
 [![stable](http://hughsk.github.io/stability-badges/dist/stable.svg)](http://nodejs.org/api/documentation.html#documentation_stability_index)
 
 Subset provides basic and generalized set operations for JavaScript.

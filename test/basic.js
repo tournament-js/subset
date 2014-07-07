@@ -71,7 +71,7 @@ test("maxBy/minBy", function (t) {
   t.equal($.minimum([1,3,2,5,2]), 1, "min [1,3,2,5,2] === 1");
 
   // generalized
-  var mbRes = $.maximumBy($.comparing('length'), [ [1,3,2], [2], [2,3] ]);
+  var mbRes = $.maximumBy($.comparing('length'), [ [2], [1,3,2], [2,3] ]);
   t.deepEqual(mbRes, [1,3,2], 'maxBy returns the element for which length is maximal');
   var collectRes = $.maximum([ [1,3,2], [2], [2,3] ].map(get('length')));
   t.equal(collectRes, 3, "maximum of collects simply returns the value");
