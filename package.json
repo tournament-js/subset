@@ -2,7 +2,7 @@
   "author": "Eirik Albrigtsen <analsandblaster@gmail.com>",
   "name": "subset",
   "description": "Generalized set operations and comparisons in the style of Haskell",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "stability": "stable",
   "repository": {
     "type": "git",
