@@ -1,8 +1,9 @@
 # Subset
-[![Build Status](https://secure.travis-ci.org/clux/subset.svg)](http://travis-ci.org/clux/subset)
-[![Dependency Status](https://david-dm.org/clux/subset.svg)](https://david-dm.org/clux/subset)
-[![stable](http://hughsk.github.io/stability-badges/dist/stable.svg)](http://nodejs.org/api/documentation.html#documentation_stability_index)
-![coverage](http://img.shields.io/badge/coverage-100%-00ff00.svg)
+[![npm status](http://img.shields.io/npm/v/subset.svg)](https://www.npmjs.org/package/subset)
+[![build status](https://secure.travis-ci.org/clux/subset.svg)](http://travis-ci.org/clux/subset)
+[![dependency status](https://david-dm.org/clux/subset.svg)](https://david-dm.org/clux/subset)
+[![coverage status](http://img.shields.io/coveralls/clux/subset.svg)](https://coveralls.io/r/clux/subset)
+[![stable](http://img.shields.io/badge/stability-stable-74C614.svg)](http://nodejs.org/api/documentation.html#documentation_stability_index)
 
 Subset provides basic and generalized set operations for JavaScript.
 They are inspired by a subset of the interface to Haskell's [Data.List](http://www.haskell.org/ghc/docs/latest/html/libraries/base/Data-List.html), but optimized for JavaScript semantics and performance.

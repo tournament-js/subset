@@ -1,6 +1,4 @@
-var tap = require('tap')
-  , test = tap.test
-  , $ = require('../');
+var $ = require('../');
 
 // take a few basics from interlude to help testing
 var get = function (prop) {
@@ -12,7 +10,7 @@ var eq2 = function (x, y) {
   return x === y;
 }
 
-test("comparison and equality", function (t) {
+exports.comparisons = function (t) {
   // compare
   t.deepEqual([2,4,1,3].sort($.compare()), [2,4,1,3].sort(), "$.compare is default behavior");
   t.deepEqual([2,4,1,3].sort($.compare()), [1,2,3,4], "$.compare is default behavior asc");
@@ -63,10 +61,10 @@ test("comparison and equality", function (t) {
   t.equal(aEq2({a:5}, {}), false, "!equality on a (failed to exist)");
   t.equal(aEq2({a:5}, {b:2, a:5}), true, "equality on a");
 
-  t.end();
-});
+  t.done();
+};
 
-test("maxBy/minBy", function (t) {
+exports.maxBy = function (t) {
   t.equal($.maximum([1,3,2,5,2]), 5, "max [1,3,2,5,2] === 5");
   t.equal($.minimum([1,3,2,5,2]), 1, "min [1,3,2,5,2] === 1");
 
@@ -80,11 +78,10 @@ test("maxBy/minBy", function (t) {
   t.deepEqual(mbRes, [2], 'minBy returns the element for which length is maximal');
   var collectRes = $.minimum([ [1,3,2], [2], [2,3] ].map(get('length')));
   t.equal(collectRes, 1, "minymum of collects simply returns the value");
-  t.end();
-});
+  t.done();
+};
 
-
-test("list operations", function (t) {
+exports.listOperations = function (t) {
   // insert
   t.deepEqual($.insert([1,2,3,4],2), [1,2,2,3,4], "insert in middle");
   t.deepEqual($.insert([1,2,3,4],5), [1,2,3,4,5], "insert at end");
@@ -176,11 +173,11 @@ test("list operations", function (t) {
     , [{a:2, b:1}, {a:4, b:2}]
   );
   t.deepEqual(res, [{a:1}, {a:3}], "differenceBy");
-  t.end();
-});
+  t.done();
+};
 
 
-test("isSubsetOf", function (t) {
+exports.isSubsetOf = function (t) {
   t.ok($.isSubsetOf([1,2], [1,2,3]), "[1,2] subset of [1,2,3]");
   t.ok(!$.isSubsetOf([1,2,3], [1,2]), "[1,2,3] not subset of [1,2]");
   t.ok($.isSubsetOf([1,2,3], [1,2,3]), "[1,2,3] subset of [1,2,3]");
@@ -193,5 +190,5 @@ test("isSubsetOf", function (t) {
   t.ok($.isSubsetOf([1,2,2], [1,2,2,3]), "[1,2,2] subset of [1,2,2,3]");
   t.ok($.isSubsetOf($.nub([1,2,2]), [1,2,3]), "nub([1,2,2]) subset of [1,2,3]");
 
-  t.end();
-});
+  t.done();
+};

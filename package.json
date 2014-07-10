@@ -3,6 +3,7 @@
   "name": "subset",
   "description": "Generalized set operations and comparisons in the style of Haskell",
   "version": "0.1.4",
+  "stability": "stable",
   "repository": {
     "type": "git",
     "url": "clux/subset"
@@ -21,13 +22,16 @@
     "Ord",
     "ES5"
   ],
-  "main": "subset.js",
+  "main": "index.js",
   "scripts": {
-    "test": "tap test/*.js",
-    "coverage": "covert test/*.js"
+    "test": "$(npm bin)/nodeunit --reporter=verbose test/*.js",
+    "coveralls": "$(npm bin)/jscoverage lib && SUBSET_COV=1 $(npm bin)/nodeunit --reporter=lcov test | $(npm bin)/coveralls"
   },
+  "dependencies": {},
   "devDependencies": {
-    "tap": "~0.4.4"
+    "nodeunit": "~0.9.0",
+    "jscoverage": "~0.5.4",
+    "coveralls": "~2.11.1"
   },
   "license": "MIT"
 }
