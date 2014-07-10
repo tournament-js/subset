@@ -1,3 +1,7 @@
+0.1.5 / 2014-07-10
+==================
+  * Documentation and test coverage maintenance release.
+
 0.1.4 / 2013-04-26
 ==================
   * Update package.json a little
