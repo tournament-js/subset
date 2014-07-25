@@ -1,4 +1,4 @@
-var $ = require('../');
+var $ = require(process.env.SUBSET_COV ? '../subset-cov.js' : '../');
 
 // take a few basics from interlude to help testing
 var get = function (prop) {
