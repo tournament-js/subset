@@ -3,7 +3,6 @@
 [![build status](https://secure.travis-ci.org/clux/subset.svg)](http://travis-ci.org/clux/subset)
 [![dependency status](https://david-dm.org/clux/subset.svg)](https://david-dm.org/clux/subset)
 [![coverage status](http://img.shields.io/coveralls/clux/subset.svg)](https://coveralls.io/r/clux/subset)
-[![stable](http://img.shields.io/badge/stability-stable-74C614.svg)](http://nodejs.org/api/documentation.html#documentation_stability_index)
 
 Subset provides basic and generalized set operations for JavaScript.
 They are inspired by a subset of the interface to Haskell's [Data.List](http://www.haskell.org/ghc/docs/latest/html/libraries/base/Data-List.html), but optimized for JavaScript semantics and performance.
@@ -45,25 +44,6 @@ Read the [full API](https://github.com/clux/subset/blob/master/api.md).
 
 Note that it is often useful to get it with the larger utility library:
 [interlude](https://github.com/clux/interlude) for which it was made.
-
-## Installation
-
-```bash
-$ npm install subset
-```
-
-## Running tests
-Install development dependencies
-
-```bash
-$ npm install
-```
-
-Run the tests
-
-```bash
-$ npm test
-```
 
 ## License
 MIT-Licensed. See LICENSE file for details.
