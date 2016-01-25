@@ -17,17 +17,17 @@ test('comparisons', function *(t) {
     return 4*x.a + x.b;
   };
   var objs = [{a: 1, b: 0}, {a: 0, b: 3}]; // first has higher cost
-  objs.sort($.compare(cost));
+  objs.sort($.compareBy(cost));
 
   t.eq(objs[0], {a: 0, b: 3}, 'compare by cost asc (lowest first)');
 
-  objs.sort($.compare(cost, +1));
+  objs.sort($.compareBy(cost, +1));
   t.eq(objs[0], {a: 0, b: 3}, 'compare by cost asc def (lowest first)');
 
-  objs.sort($.compare(cost, -1));
+  objs.sort($.compareBy(cost, -1));
   t.eq(objs[0], {a: 1, b: 0}, 'compare by cost desc (highest first)');
 
-  t.eq($.minimumBy($.compare(cost), objs), {a: 0, b: 3}, 'minimum has smallest cost');
+  t.eq($.minimumBy($.compareBy(cost), objs), {a: 0, b: 3}, 'minimum has smallest cost');
 
   // comparing
   t.eq([[1,3],[1,2],[1,5]].sort($.comparing(1)), [[1,2],[1,3],[1,5]], 'comparing');

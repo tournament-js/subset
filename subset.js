@@ -16,19 +16,6 @@ $.equality = function () {
   };
 };
 
-$.compare = function (c, c2) {
-  if (typeof c === 'function') {
-    c2 = c2 || 1;
-    return function (x, y) {
-      return c2 * (c(x) - c(y));
-    };
-  }
-  c = c || 1;
-  return function (x, y) {
-    return c * (x - y);
-  };
-};
-
 // result of this can be passed directly to Array::sort
 $.comparing = function () {
   var args = arguments;
@@ -42,6 +29,9 @@ $.comparing = function () {
     return 0;
   };
 };
+
+$.compareBy = (cmp, c) => (x, y) => (c || 1)*(cmp(x) - cmp(y));
+$.compare = (c) => (x, y) => (c || 1)*(x - y);
 
 // helper for set functions
 $.indexOfBy = function (eq, xs, x) {

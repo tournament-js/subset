@@ -28,8 +28,8 @@ These functions help generate
 [compare functions](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/sort)
 for `Array.prototype.sort`.
 
-### $.compare([ord]) :: (x, y -> x `compare` y)
-This creates a function which returns the numeric difference between x and y,
+### $.compare([ord]) :: (x, y) -> Number
+This creates a function which returns the numeric difference between `x` and `y`,
 optionally multiplying by minus one if the ord parameter is set to `-1` for
 descending order. The default ord parameter `+1` for ascending order may be omitted.
 
@@ -43,9 +43,12 @@ sorting them _lexicographically_. This helps avoid common sorting mistakes:
 
 [1,4,3,2].sort($.compare()); // [1,2,3,4] (expected)
 [2, 100, 10, 4].sort($.compare()); // [2, 4, 10, 100] (expected..)
+
+// reverse sort:
+[2, 100, 10, 4].sort($.compare(-1)); // [100, 10, 4, 2]
 ```
 
-### $.compare(costFn [, ord]) :: (x, y -> cost(x) `compare` cost(y))
+### $.compareBy(costFn [, ord]) :: (x, y) -> Number
 An overloaded variant of compare that takes a cost function to minimize (or any function that you may wish to maximize or minimize).
 
 The extra `ord` parameter (similarly) defines what order you want values ordered in:
@@ -54,13 +57,12 @@ The extra `ord` parameter (similarly) defines what order you want values ordered
 - `-1` : descending on cost (x with highest cost first)
 
 ```js
-var cost = function (x) {
-  return 4*x.a + x.b;
-};
-var objs = [{a:1, b:0}, {a:0, b:3}]; // first has higher cost
-objs.sort($.compare(cost));     // [{a:0, b:3}, {a:1, b:0}]
-objs.sort($.compare(cost), +1); // [{a:0, b:3}, {a:1, b:0}]
-objs.sort($.compare(cost), +1); // [{a:1, b:0}, {a:0, b:3}]
+var cost = (x) => 4*x.a + x.b;
+
+var objs = [ { a: 1, b: 0 }, { a: 0, b: 3 } ]; // first has higher cost
+objs.sort($.compareBy(cost));     // [ { a: 0, b: 3 }, { a: 1, b: 0 } ]
+objs.sort($.compareBy(cost, +1)); // [ { a: 0, b: 3 }, { a: 1, b: 0 } ]
+objs.sort($.compareBy(cost, -1)); // [ { a: 1, b: 0 }, { a: 0, b: 3 } ]
 ```
 
 
