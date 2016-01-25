@@ -16,22 +16,22 @@ test('comparisons', function *(t) {
   var cost = function (x) {
     return 4*x.a + x.b;
   };
-  var objs = [{a:1, b:0}, {a:0, b:3}]; // first has higher cost
+  var objs = [{a: 1, b: 0}, {a: 0, b: 3}]; // first has higher cost
   objs.sort($.compare(cost));
 
-  t.eq(objs[0], {a:0, b:3}, 'compare by cost asc (lowest first)');
+  t.eq(objs[0], {a: 0, b: 3}, 'compare by cost asc (lowest first)');
 
-  objs.sort($.compare(cost, +1))
-  t.eq(objs[0], {a:0, b:3}, 'compare by cost asc def (lowest first)');
+  objs.sort($.compare(cost, +1));
+  t.eq(objs[0], {a: 0, b: 3}, 'compare by cost asc def (lowest first)');
 
   objs.sort($.compare(cost, -1));
-  t.eq(objs[0], {a:1, b:0}, 'compare by cost desc (highest first)');
+  t.eq(objs[0], {a: 1, b: 0}, 'compare by cost desc (highest first)');
 
-  t.eq($.minimumBy($.compare(cost), objs), {a:0, b:3}, 'minimum has smallest cost');
+  t.eq($.minimumBy($.compare(cost), objs), {a: 0, b: 3}, 'minimum has smallest cost');
 
   // comparing
   t.eq([[1,3],[1,2],[1,5]].sort($.comparing(1)), [[1,2],[1,3],[1,5]], 'comparing');
-  t.eq([{a:2},{a:1}].sort($.comparing('a')), [{a:1}, {a:2}], 'comparing objs');
+  t.eq([{a:2},{a:1}].sort($.comparing('a')), [{a: 1}, {a: 2}], 'comparing objs');
 
   var money = [{id: 1, money: 3}, {id: 2, money: 0}, {id: 3, money: 3}];
   var res = money.sort($.comparing('money', -1, 'id', -1));
@@ -52,9 +52,9 @@ test('comparisons', function *(t) {
   t.equal(eq1([2,1], [2,2]), false, '!equality on 1');
 
   aEq2 = $.equality('a');
-  t.equal(aEq2({a:5}, {a:3}), false, '!equality on a');
-  t.equal(aEq2({a:5}, {}), false, '!equality on a (failed to exist)');
-  t.equal(aEq2({a:5}, {b:2, a:5}), true, 'equality on a');
+  t.equal(aEq2({a: 5}, {a: 3}), false, '!equality on a');
+  t.equal(aEq2({a: 5}, {}), false, '!equality on a (failed to exist)');
+  t.equal(aEq2({a: 5}, {b: 2, a: 5}), true, 'equality on a');
 });
 
 test('maxBy', function *(t) {
@@ -62,15 +62,15 @@ test('maxBy', function *(t) {
   t.equal($.minimum([1,3,2,5,2]), 1, 'min [1,3,2,5,2] === 1');
 
   // generalized
-  var mbRes = $.maximumBy($.comparing('length'), [ [2], [1,3,2], [2,3] ]);
-  t.eq(mbRes, [1,3,2], 'maxBy returns the element for which length is maximal');
-  var collectRes = $.maximum([ [1,3,2], [2], [2,3] ].map(get('length')));
-  t.equal(collectRes, 3, 'maximum of collects simply returns the value');
+  var maxRes = $.maximumBy($.comparing('length'), [ [2], [1,3,2], [2,3] ]);
+  t.eq(maxRes, [1,3,2], 'maxBy returns the element for which length is maximal');
+  var maxResCost = $.maximum([ [1,3,2], [2], [2,3] ].map(get('length')));
+  t.equal(maxResCost, 3, 'maximum of collects simply returns the value');
 
-  var mbRes = $.minimumBy($.comparing('length'), [ [1,3,2], [2], [2,3] ]);
-  t.eq(mbRes, [2], 'minBy returns the element for which length is maximal');
-  var collectRes = $.minimum([ [1,3,2], [2], [2,3] ].map(get('length')));
-  t.equal(collectRes, 1, 'minymum of collects simply returns the value');
+  var minRes = $.minimumBy($.comparing('length'), [ [1,3,2], [2], [2,3] ]);
+  t.eq(minRes, [2], 'minBy returns the element for which length is maximal');
+  var minResCost = $.minimum([ [1,3,2], [2], [2,3] ].map(get('length')));
+  t.equal(minResCost, 1, 'minymum of collects simply returns the value');
 });
 
 test('listOperations', function *(t) {
@@ -161,10 +161,10 @@ test('listOperations', function *(t) {
   t.eq($.difference(ys.concat(xs), ys), xs, 'difference prop');
 
   var res = $.differenceBy($.equality('a')
-    , [{a:1}, {a:2}, {a:3}]
-    , [{a:2, b:1}, {a:4, b:2}]
+    , [{a: 1}, {a: 2}, {a: 3}]
+    , [{a: 2, b: 1}, {a: 4, b: 2}]
   );
-  t.eq(res, [{a:1}, {a:3}], 'differenceBy');
+  t.eq(res, [{a: 1}, {a: 3}], 'differenceBy');
 });
 
 
