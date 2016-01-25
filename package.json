@@ -23,13 +23,14 @@
   ],
   "main": "subset.js",
   "scripts": {
-    "test": "nodeunit --reporter=verbose test/*.js",
-    "coverage": "jscoverage subset.js && SUBSET_COV=1 nodeunit --reporter=lcov test"
+    "test": "bndg test/*.js",
+    "precoverage": "istanbul cover bndg test/*.js",
+    "coverage": "cat coverage/lcov.info && rm -rf coverage"
   },
   "dependencies": {},
   "devDependencies": {
-    "nodeunit": "~0.9.0",
-    "jscoverage": "~0.5.4"
+    "bandage": "^0.4.2",
+    "istanbul": "^0.4.2"
   },
   "license": "MIT"
 }
