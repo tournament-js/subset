@@ -5,7 +5,7 @@
 [![coverage status](http://img.shields.io/coveralls/clux/subset.svg)](https://coveralls.io/r/clux/subset)
 
 Subset provides basic and generalized set operations for JavaScript.
-They are inspired by a subset of the interface to Haskell's [Data.List](http://www.haskell.org/ghc/docs/latest/html/libraries/base/Data-List.html), but optimized for JavaScript semantics and performance.
+They are inspired by a subset of the interface to Haskell's [Data.List](https://hackage.haskell.org/package/base/docs/Data-List.html), but optimized for JavaScript semantics and performance.
 
 ## Usage
 Attach it to the short variable of choice:

@@ -15,9 +15,9 @@ var lenEquals = $.equality('length');
 lenEquals([1,3,5], [2,4,6]); // true
 lenEquals([1,3,5], [2,4]); // false
 
-var steve = {name: 'Steve', money: 30000, status: "Awesome"};
-var peter = {name: 'Peter', money: 30000, status: "Depressed"};
-var steve2 = {name: 'Clone', money: 30000, status: "Awesome"};
+var steve = { name: 'Steve', money: 30000, status: "Awesome" };
+var peter = { name: 'Peter', money: 30000, status: "Depressed" };
+var steve2 = { name: 'Clone', money: 30000, status: "Awesome" };
 var equallyCool = $.equality('money', 'status');
 equallyCool(steve, peter); // false
 equallyCool(steve, steve2); // true
