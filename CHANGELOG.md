@@ -1,3 +1,11 @@
+0.2.0 / 2016-01-XX
+==================
+  * Rewrite for ES6
+  * `indexOfBy` added to exports
+  * `isSubsetOf` now assumes inputs have no duplicates
+  * `isSubsetOf` third boolean arg to check if proper subset no longer exists
+  * `isProperSubsetOf` now exported - and assumes no duplicates
+
 0.1.7 / 2015-11-15
 ==================
   * Added `.npmignore`
