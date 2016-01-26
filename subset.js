@@ -101,28 +101,11 @@ $.nubBy = function (eq, xs) {
 };
 $.nub = (xs) => $.nubBy(eq2, xs);
 
-
 $.groupBy = function (eq, xs) {
-  var result = []
-    , j, sub;
-  for (var i = 0, len = xs.length; i < len; i = j) {
-    sub = [xs[i]];
-    for (j = i + 1; j < len && eq(xs[i], xs[j]); j += 1) {
-      sub.push(xs[j]);
-    }
-    result.push(sub);
-  }
-  return result;
-};
-$.groupBy = function (eq, xs) {
-  var result = []
-    , j, sub;
-  for (var i = 0, len = xs.length; i < len; i = j) {
-    sub = [xs[i]];
-    for (j = i + 1; j < len && eq(xs[i], xs[j]); j += 1) {
-      sub.push(xs[j]);
-    }
-    result.push(sub);
+  var result = [];
+  for (var i = 0, j = 0, len = xs.length; i < len; i = j) {
+    for (j = i + 1; j < len && eq(xs[i], xs[j]);) { j += 1; }
+    result.push(xs.slice(i, j));
   }
   return result;
 };
