@@ -1,5 +1,5 @@
 # Subset API
-Subset export several basic and generalized set operations for JavaScript Arrays. The new ES6 `Set` class is not particularly helpful for doing set operations on general objects (as their only version of equality is `===`), and arrays are more frequently used.
+Subset export several basic and generalized set operations for JavaScript Arrays.
 
 This is in general a pure functional library, but a couple of functions does modify the input (`insert` and `delete` only). The generalized versions accept general notions of equality which is explored immediately below.
 
