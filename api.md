@@ -290,8 +290,8 @@ $.maximum(nested.map((x) => x.length)); // 3
 $.maximumBy($.comparing('length'), nested); // [ 1, 3, 2 ]
 ```
 
-Note that unlike `$.maximum` which returns `-Infinity` in the case of an empty
-Array, `$.maximumBy` has nothing sensible to return since the structure of the type passed in is unknown.
+Note that unlike `maximum` which returns `-Infinity` in the case of an empty
+Array, `maximumBy` has nothing sensible to return since the structure of the type passed in is unknown.
 
 ```js
 $.minimumBy($.comparing('something'), []); // undefined
