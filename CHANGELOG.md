@@ -6,6 +6,10 @@
   * `isSubsetOf` third boolean arg to check if proper subset no longer exists
   * `isProperSubsetOf` now exported - and assumes no duplicates
   * `compare` now split into `compare` and `compareBy`
+  * `comparing` (variadic version of `compare`) removed
+  * `equality` now only takes single argument
+  * `equalityBy` added to exports
+  * `nub` and `nubBy` renamed to `unique` and `uniqueBy`
 
 0.1.7 / 2015-11-15
 ==================

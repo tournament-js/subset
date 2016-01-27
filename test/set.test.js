@@ -29,22 +29,10 @@ test('comparisons', function *(t) {
 
   t.eq($.minimumBy($.compareBy(cost), objs), {a: 0, b: 3}, 'minimum has smallest cost');
 
-  // comparing
-  t.eq([[1,3],[1,2],[1,5]].sort($.comparing(1)), [[1,2],[1,3],[1,5]], 'comparing');
-  t.eq([{a:2},{a:1}].sort($.comparing('a')), [{a: 1}, {a: 2}], 'comparing objs');
-
   var money = [{id: 1, money: 3}, {id: 2, money: 0}, {id: 3, money: 3}];
-  var res = money.sort($.comparing('money', -1, 'id', -1));
+  var res = money.sort((x, y) => (y.money - x.money) || (y.id - x.id));
   var resExp = [ { id: 3, money: 3 }, { id: 1, money: 3 }, { id: 2, money: 0 } ];
   t.eq(res, resExp, 'money max first, then id max first');
-
-  var res = money.sort($.comparing('money', -1, 'id', +1));
-  var resExp = [ { id: 1, money: 3 }, { id: 3, money: 3 }, { id: 2, money: 0 } ];
-  t.eq(res, resExp, 'money max first, then id min first');
-
-  var res = money.sort($.comparing('money', -1, 'id'));
-  var resExp = [ { id: 1, money: 3 }, { id: 3, money: 3 }, { id: 2, money: 0 } ];
-  t.eq(res, resExp, 'money max first, then id min (default ('+'))');
 
   // equality
   var eq1 = $.equality(1);
