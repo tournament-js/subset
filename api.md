@@ -143,7 +143,7 @@ var notCoprime = (x, y) => gcd(x, y) > 1;
 var primes = $.uniqueBy(notCoprime, $.range(2, 11)); // [ 2, 3, 5, 7, 11 ]
 ```
 
-Here the definition of equality is *a and b have common factors*, and later occurances are excluded with common factors are excluded.
+Here the definition of equality is *a and b have common factors*, and later occurances with common factors are excluded.
 Note the `range` from [interlude](https://github.com/clux/interlude).
 
 ### $.group(xs) :: ys
@@ -286,15 +286,15 @@ For picking maximal values not based on numeric value, or if you simply want the
 
 ```js
 var nested = [[1,3,2], [2], [2,3]];
-$.maximum($.pluck('length', nested)); // 3
+$.maximum(nested.map((x) => x.length)); // 3
 $.maximumBy($.comparing('length'), nested); // [ 1, 3, 2 ]
 ```
 
 Note that unlike `$.maximum` which returns `-Infinity` in the case of an empty
-Array, `$.maximumBy` considers this an illegal instruction. Since the structure of the type passed in is unknown, we have nothing sensible to return.
+Array, `$.maximumBy` has nothing sensible to return since the structure of the type passed in is unknown.
 
 ```js
-$.minimumBy($.comparing('something'), []); // exception!
+$.minimumBy($.comparing('something'), []); // undefined
 ```
 
 ### $.isSubsetOf(xs, ys) :: Boolean
