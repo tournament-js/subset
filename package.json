@@ -19,7 +19,7 @@
     "haskell",
     "Data.List",
     "Ord",
-    "ES5"
+    "ES6"
   ],
   "main": "subset.js",
   "scripts": {
