@@ -1,4 +1,4 @@
-0.2.0 / 2016-01-XX
+1.0.0 / 2016-01-27
 ==================
   * Rewrite for ES6
   * `indexOfBy` added to exports
