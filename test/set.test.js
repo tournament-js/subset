@@ -117,17 +117,17 @@ test('listOperations', function *(t) {
   var res = $.intersectBy($.equality(1), [[1,3],[2,1],[1,4]], [[1,2], [2,4]]);
   t.eq(res, [[1,4]], 'intersectBy crazy, result is in first list');
 
-  // nub
-  t.eq($.nub([2,3,7,5]), [2,3,7,5], 'nub on unique');
-  t.eq($.nubBy(eq2, [2,3,7,5]), [2,3,7,5], 'nub on unique');
-  t.eq($.nub([1,3,2,4,1,2]), [1,3,2,4], 'nub basic');
-  t.eq($.nubBy(eq2, [1,3,2,4,1,2]), [1,3,2,4], 'nubBy basic');
+  // unique
+  t.eq($.unique([2,3,7,5]), [2,3,7,5], 'unique on unique');
+  t.eq($.uniqueBy(eq2, [2,3,7,5]), [2,3,7,5], 'unique on unique');
+  t.eq($.unique([1,3,2,4,1,2]), [1,3,2,4], 'unique basic');
+  t.eq($.uniqueBy(eq2, [1,3,2,4,1,2]), [1,3,2,4], 'uniqueBy basic');
 
-  t.eq($.nub([1,1,1,1]), [1], 'nub ones basic');
-  t.eq($.nubBy(eq2, [1,1,1,1]), [1], 'nubBy ones basic');
+  t.eq($.unique([1,1,1,1]), [1], 'unique ones basic');
+  t.eq($.uniqueBy(eq2, [1,1,1,1]), [1], 'uniqueBy ones basic');
 
-  var res = $.nubBy($.equality(1), [[1,3],[5,2],[2,3],[2,2]]);
-  t.eq(res, [[1,3],[5,2]], 'nubBy equality on 1');
+  var res = $.uniqueBy($.equality(1), [[1,3],[5,2],[2,3],[2,2]]);
+  t.eq(res, [[1,3],[5,2]], 'uniqueBy equality on 1');
 
   var notCoprime = function (a, b) {
     while (b) {
@@ -137,7 +137,7 @@ test('listOperations', function *(t) {
     }
     return a > 1;
   };
-  t.eq($.nubBy(notCoprime, [2,3,4,5,6,7,8,9,10,11]), [2,3,5,7,11], 'primes nubBy');
+  t.eq($.uniqueBy(notCoprime, [2,3,4,5,6,7,8,9,10,11]), [2,3,5,7,11], 'primes uniqueBy');
 
   // group
   t.eq($.group([1,3,3,2,3,3]), [[1],[3,3],[2],[3,3]], 'basic group');
@@ -177,5 +177,5 @@ test('isSubsetOf', function *(t) {
   t.ok(!$.isProperSubsetOf([1,2,3], [1,2]), '[1,2,3] is not a proper subset of [1,2]');
   t.ok(!$.isProperSubsetOf([1,2,2], [1,2]), '[1,2,2] is not a proper subset of [1,2]');
   t.ok($.isSubsetOf([1,2,2], [1,2,2,3]), '[1,2,2] subset of [1,2,2,3]');
-  t.ok($.isSubsetOf($.nub([1,2,2]), [1,2,3]), 'nub([1,2,2]) subset of [1,2,3]');
+  t.ok($.isSubsetOf($.unique([1,2,2]), [1,2,3]), 'unique([1,2,2]) subset of [1,2,3]');
 });

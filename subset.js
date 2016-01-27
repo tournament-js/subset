@@ -91,7 +91,7 @@ $.intersectBy = function (eq, xs, ys) {
 };
 $.intersect = (xs, ys) => $.intersectBy(eq2, xs, ys);
 
-$.nubBy = function (eq, xs) {
+$.uniqueBy = function (eq, xs) {
   return xs.reduce((acc, x) => {
     if ($.indexOfBy(eq, acc, x) < 0) {
       acc.push(x);
@@ -99,7 +99,7 @@ $.nubBy = function (eq, xs) {
     return acc;
   }, []);
 };
-$.nub = (xs) => $.nubBy(eq2, xs);
+$.unique = (xs) => $.uniqueBy(eq2, xs);
 
 $.groupBy = function (eq, xs) {
   var result = [];
@@ -112,9 +112,9 @@ $.groupBy = function (eq, xs) {
 $.group = (xs) => $.groupBy(eq2, xs);
 
 $.unionBy = function (eq, xs, ys) {
-  return xs.concat(xs.reduce($.deleteBy.bind(null, eq), $.nubBy(eq, ys)));
+  return xs.concat(xs.reduce($.deleteBy.bind(null, eq), $.uniqueBy(eq, ys)));
 };
-$.union = (xs, ys) => xs.concat(xs.reduce($.delete, $.nub(ys)));
+$.union = (xs, ys) => xs.concat(xs.reduce($.delete, $.unique(ys)));
 
 $.differenceBy = (eq, xs, ys) => ys.reduce($.deleteBy.bind(null, eq), xs.slice());
 $.difference = (xs, ys) => ys.reduce($.delete, xs.slice());
