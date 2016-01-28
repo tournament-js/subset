@@ -1,3 +1,8 @@
+1.1.0 / 2016-01-28
+==================
+  * Documentation tweak release
+  * Was meant to be a patch
+
 1.0.0 / 2016-01-27
 ==================
   * Rewrite for ES6
