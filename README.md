@@ -24,7 +24,7 @@ unionBy(equality('a'), [{ a: 1 }, { a: 3 }], [{ a: 2 }, { a: 3 }]);
 unique([1,3,2,4,1,2]); // [ 1, 3, 2, 4 ]
 
 var notCoprime = (x, y) => gcd(x, y) > 1;
-var primes = uniqueBy(notCoprime, range(2, 11)); // [ 2, 3, 5, 7, 11 ]
+var primes = uniqueBy(notCoprime, range(11).slice(1)); // [ 2, 3, 5, 7, 11 ]
 
 group([1,2,2,3,5,5,2]); // [ [1], [2,2], [3], [5,5], [2] ]
 
